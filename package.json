@@ -1,0 +1,22 @@
+{
+  "name": "sites-26-06-2023",
+  "version": "1.0.0",
+  "description": "MVC : Controle de tarefas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "MVC",
+    "aula",
+    "tarefas"
+  ],
+  "author": "Ana Júlia",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "mysql2": "^3.4.2",
+    "nodemon": "^2.0.22"
+  }
+}
