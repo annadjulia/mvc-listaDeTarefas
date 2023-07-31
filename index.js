@@ -3,10 +3,14 @@ const tarefaController = require('./controllers/tarefaController');
 const app = express(); 
 const port = 3000; 
 const db = require('./models/db');
+const expressLayouts = require('express-ejs-layouts');
 
-
+app.use(expressLayouts);
+app.set('layouts', './layouts');
 app.set('view engine', 'ejs'); 
 app.use(express.urlencoded({ extended: true })); 
+app.use(express.static('public'));
+
 
 // Rotas
 app.get('/', (req, res) => {
