@@ -1,16 +1,9 @@
-<!DOCTYPE html> 
-<html> 
-    <head> 
-    <title>Lista de Tarefas</title> 
-    <link rel="stylesheet" href="./css/style.css">
-    </head>
+<h1>Lista de Tarefas</h1> 
+    <ul> 
+        <% tarefas.forEach(tarefa => { %> <li><%= tarefa.title %></li> <% }); %> 
+    </ul> 
+    <form action="/tarefa" method="POST"> 
+        <input type="text" name="title" placeholder="Nova Tarefa"> 
+        <button type="submit">Adicionar</button> 
+    </form> 
 
-    <body> 
-        <h1>Lista de Tarefas</h1> 
-        <ul> <% tarefas.forEach(tarefa => { %> <li><%= tarefa.title %></li> <% }); %> </ul> 
-            <form action="/tarefa" method="POST"> 
-                <input type="text" name="title" placeholder="Nova Tarefa"> 
-                <button type="submit">Adicionar</button> 
-            </form> 
-    </body> 
-</html>

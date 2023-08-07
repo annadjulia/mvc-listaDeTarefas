@@ -7,7 +7,7 @@ class Tarefa {
 
     static listarTarefas() {
         const db = require('./db');
-        let tarefas = db.query('SELECT * FROM tarefas');
+        let tarefas = db.query('SELECT * FROM tarefas ORDER BY id ASC');
         return tarefas;
     }
 
