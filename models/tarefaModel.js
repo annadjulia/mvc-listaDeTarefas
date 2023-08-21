@@ -1,3 +1,5 @@
+const db = require('./db');
+
 class Tarefa { 
     constructor(id, title, description) { 
     this.id = id; 
@@ -6,13 +8,11 @@ class Tarefa {
     } 
 
     static listarTarefas() {
-        const db = require('./db');
         let tarefas = db.query('SELECT * FROM tarefas ORDER BY id ASC');
         return tarefas;
     }
 
     async salvar() {
-        const db = require('./db');
         let res = await db.query(`INSERT INTO tarefas (title) VALUES ('${this.title}')`);
         console.log(res)
     }
