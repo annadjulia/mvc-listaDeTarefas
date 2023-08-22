@@ -1,6 +1,18 @@
 <h1>Lista de Tarefas</h1> 
     <ul> 
-        <% tarefas.forEach(tarefa => { %> <li><%= tarefa.title %></li> <% }); %> 
+        <% tarefas.forEach(tarefa => { %> <li> 
+            <%- tarefa.title %></li> 
+            <div>
+                <a href="/tarefa/edit/<%- tarefa.id %>">
+                    <i class="bi-pencil-square"></i>
+                </a>
+            </div>
+            <div>
+                <a href="/tarefa/delete/<%- tarefa.id %>">
+                    <i class="bi-x-circle"></i>
+                </a>
+            </div>
+        <% }); %> 
     </ul> 
     <form action="/tarefa" method="POST"> 
         <input type="text" name="title" placeholder="Nova Tarefa"> 

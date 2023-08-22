@@ -5,10 +5,10 @@ const mysql = require('mysql2/promise');
 async function connect() {
   try {
     const connection = await mysql.createConnection({
-      host: 'localhost',
-      user: 'root',
-      password: '',
-      database: 'tarefas_sites'
+      host: 'sql209.byetcluster.com',
+      user: 'if0_34864425',
+      password: 'annadjulia4815162342',
+      database: 'if0_34864425_tarefas_sites'
     });
     console.log('Conexão estabelecida com sucesso');
     return connection;

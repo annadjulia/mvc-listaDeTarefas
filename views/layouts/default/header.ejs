@@ -3,4 +3,14 @@
         <img src="https://res.cloudinary.com/dj1sdgtdr/image/upload/v1690811477/supresa_riarch.jpg" id="rick" alt="">
     </div>
     <div id="mensagem"></div>
+    <div id="user">
+        <% if (locals.layoutVariables.usuario) { %>
+            <p>
+                Olá, <%- locals.layoutVariables.usuario.nome %>
+                <a href="/logout" class="btn-primary">
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </p>
+        <%}%>
+    </div>
 </header>

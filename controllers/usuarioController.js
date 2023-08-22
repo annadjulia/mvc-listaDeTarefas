@@ -7,7 +7,7 @@ function login(req, res) {
 async function autenticar(req, res) {
     console.log(req.body);
     if(req.body.email == "" || req.body.senha == "") {
-        console.log("erro");
+        console.log("Preencha todos os campos");
     } else {
         console.log("entrou");
         let resp = await usuarioModel.autenticar(req.body.email, req.body.senha);
@@ -20,10 +20,15 @@ async function autenticar(req, res) {
             };
             res.redirect('/tarefas');
         }else{
-            console.log("erro");
+            console.log("Usuário ou senha incorretos");
             res.redirect('/login');
         }
     }
+};
+
+async function logout(req, res) {
+    delete req.session.usuario;
+    res.redirect('/login');
 };
 
 module.exports = { login, autenticar };
