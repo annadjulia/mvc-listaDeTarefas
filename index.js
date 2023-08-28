@@ -63,9 +63,9 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.get('/login', (res, req) => {
+app.get('/login', (req, res) => {
     app.set('layout', './layouts/default/login');
-    usuarioController.login(res, req);
+    usuarioController.login(req, res);
 });
 
 app.post('/login', (req, res) => {
@@ -80,7 +80,7 @@ app.get('/logout', (req, res) => {
 app.get('/tarefa/delete/:id', (req, res) => {
     tarefaController.deleteTarefa(req, res);
 });
-
+    
 app.get('/tarefas', tarefaController.getTarefas); 
 app.post('/tarefa', tarefaController.addTarefa); 
 app.delete('/tarefa', tarefaController.deleteTarefa);
